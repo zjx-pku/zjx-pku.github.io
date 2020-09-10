@@ -1,12 +1,115 @@
-<!DOCTYPE html><html>
-<head> 
-<meta charset="utf-8"> 
-<title>Solar System</title> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/libs/aframe.min.js"></script>
+    <title>Solar_System_1.0</title>
 </head>
+
 <body>
+    <a-scene>
+        <!--assets:调用材质图片--> 
+        <a-assets>
+            <img id="sun" src="/src/space/sun.jpg" />
+            <img id="mercury" src="/src/space/mercury.jpg" />
+            <img id="venus" src="/src/space/venus.jpg" />
+            <img id="earth" src="/src/space/earth.jpg" />
+            <img id="mars" src="/src/space/mars.jpg" />
+            <img id="jupiter" src="/src/space/jupiter.jpg" />
+            <img id="saturn" src="/src/space/saturn.jpg" />
+            <img id="saturn alpha ring" src="/src/space/saturn alpha ring.jpg" />
+            <img id="uranus" src="/src/space/uranus.jpg" />
+            <img id="neptune" src="/src/space/neptune.jpg" />
+            <img id="sky" src="/src/space/sky.jpg" />
+        </a-assets>
 
-<p>
-<a href="/solar_system_1.0/index.html">Solar_System_1.0</a> 是我创建的太空漫游第一版。</p>
+        <!--Sun--> 
+        <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
+            animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
+        </a-entity>
 
+        <!--Mercury and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 22000; easing: linear; loop: true">
+            <a-entity position="0 0 4" geometry="primitive: sphere; radius: 0.5" material="src:#mercury" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="4" radius-outer="4.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Venus and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 24000; easing: linear; loop: true">
+            <a-entity position="0 0 6" geometry="primitive: sphere; radius: 0.6" material="src:#venus" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="6" radius-outer="6.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Earth and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 26000; easing: linear; loop: true">
+            <a-entity position="0 0 8" geometry="primitive: sphere; radius: 0.6" material="src:#earth" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="8" radius-outer="8.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Mars and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 28000; easing: linear; loop: true">
+            <a-entity position="0 0 10" geometry="primitive: sphere; radius: 0.5" material="src:#mars" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="10" radius-outer="10.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Jupiter and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
+            <a-entity position="0 0 13" geometry="primitive: sphere; radius: 2" material="src:#jupiter" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="13" radius-outer="13.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Saturn,Saturn Alpha Ring and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 32000; easing: linear; loop: true">
+            <a-entity position="0 0 17" geometry="primitive: sphere; radius: 2.2" material="src:#saturn" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+            <a-entity position="0 0 17" geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3; rotation:-45 0 0" 
+                material="src:#saturn alpha ring">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="17" radius-outer="17.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Uranus and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 34000; easing: linear; loop: true">
+            <a-entity position="0 0 22" geometry="primitive: sphere; radius: 1.8" material="src:#uranus" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="22" radius-outer="22.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--Neptune and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 36000; easing: linear; loop: true">
+            <a-entity position="0 0 26" geometry="primitive: sphere; radius: 1.7" material="src:#neptune" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="26" radius-outer="26.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+
+        <!--plane and sky--> 
+        <a-plane position="0 -3 0" rotation="-90 0 0" width="1000" height="1000" src="#sky"></a-plane>
+        <a-sky src="#sky"></a-sky>
+    </a-scene>
 </body>
+
 </html>
+
