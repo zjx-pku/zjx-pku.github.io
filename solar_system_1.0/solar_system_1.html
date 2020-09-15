@@ -76,12 +76,12 @@
         <a-ring radius-inner="13" radius-outer="13.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Saturn,Saturn Alpha Ring and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity position="0 0 -30"
             animation="property: rotation; to: 0 360 0; dur: 32000; easing: linear; loop: true">
             <a-entity position="0 0 17" geometry="primitive: sphere; radius: 2.2" material="src:#saturn" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
-            <a-entity position="0 0 17" geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3; rotation:-45 0 0" 
+            <a-entity position="0 0 17"  rotation="45 0 0" geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3" 
                 material="src:#saturn alpha ring">
             </a-entity>
         </a-entity>
