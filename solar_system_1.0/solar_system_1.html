@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/solar_system_1.0/libs/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
     <title>Solar_System_1.0</title>
 </head>
 
 <body>
     <a-scene>
-        <!--assets:调用材质图片--> 
+        <!--materials--> 
         <a-assets>
             <img id="sun" src="/solar_system_1.0/src/space/sun.jpg" />
             <img id="mercury" src="/solar_system_1.0/src/space/mercury.jpg" />
@@ -24,6 +25,11 @@
             <img id="neptune" src="/solar_system_1.0/src/space/neptune.jpg" />
             <img id="sky" src="/solar_system_1.0/src/space/sky.jpg" />
         </a-assets>
+
+        <!--font-->
+        <a-asset-item id="optimerBoldFont" 
+            src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json">
+        </a-asset-item>
         
         <!--Sun--> 
         <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
@@ -108,6 +114,10 @@
         <!--plane and sky--> 
         <a-plane position="0 -3 0" rotation="-90 0 0" width="1000" height="1000" src="#sky"></a-plane>
         <a-sky src="#sky"></a-sky>
+
+        <!--vive controls-->
+        <a-entity vive-controls="hand: left"></a-entity>
+		<a-entity vive-controls="hand: right"></a-entity>
     </a-scene>
 </body>
 
