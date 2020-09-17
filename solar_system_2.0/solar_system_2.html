@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/solar_system_1.0/libs/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
     <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
-	<title>Solar_System_2.0</title>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <title>Solar_System_2.0</title>
 </head>
 
 <body>
@@ -27,88 +28,136 @@
             <img id="uranus" src="/solar_system_1.0/src/space/uranus.jpg" />
             <img id="neptune" src="/solar_system_1.0/src/space/neptune.jpg" />
             <img id="sky" src="/solar_system_1.0/src/space/sky.jpg" />
+
+            <a-mixin id="controller"
+               physics-collider
+               static-body="shape: sphere; sphereRadius: 0.02"
+               super-hands="colliderEvent: collisions;
+                            colliderEventProperty: els;
+                            colliderEndEvent: collisions;
+                            colliderEndEventProperty: clearedEls"
+               collision-filter = "group: hands;
+                                   collidesWith: red, blue;
+                                   collisionForces: false">
+            </a-mixin>
+
+            <a-mixin id="sun_p" dynamic-body  grabbable
+                geometry="primitive: sphere; radius: 3">
+            </a-mixin>
+
+            <a-mixin id="mercury_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 0.5">
+            </a-mixin>
+
+            <a-mixin id="venus_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 0.6">
+            </a-mixin>
+
+            <a-mixin id="earth_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 0.6">
+            </a-mixin>
+
+            <a-mixin id="mars_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 0.5">
+            </a-mixin>
+
+            <a-mixin id="jupiter_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 2">
+            </a-mixin>
+
+            <a-mixin id="saturn_p" dynamic-body grabbable 
+                geometry="primitive: sphere; radius: 2.2">
+            </a-mixin>
+
+            <a-mixin id="saturn alpha ring_p" dynamic-body grabbable
+                geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3">
+            </a-mixin>
+
+            <a-mixin id="uranus_p" dynamic-body grabbable
+                geometry="primitive: sphere; radius: 1.8">
+            </a-mixin>
+
+            <a-mixin id="neptune_p" dynamic-body grabbable
+                geometry="primitive: sphere; radius: 1.7">
+            </a-mixin>
         </a-assets>
 
-        <!--font-->
-        <a-asset-item id="optimerBoldFont" 
-            src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json">
-        </a-asset-item>
-        
         <!--Sun--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
+
+        <a-entity mixin="sun_p" position="0 0 -30"  material="src:#sun"
             animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
         </a-entity>
 
         <!--Mercury and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 22000; easing: linear; loop: true">
-            <a-entity position="0 0 4" geometry="primitive: sphere; radius: 0.5" material="src:#mercury" 
+            <a-entity mixin="mercury_p" position="0 0 4"  material="src:#mercury" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="4" radius-outer="4.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Venus and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 24000; easing: linear; loop: true">
-            <a-entity position="0 0 6" geometry="primitive: sphere; radius: 0.6" material="src:#venus" 
+            <a-entity mixin="venus_p" position="0 0 6"  material="src:#venus" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="6" radius-outer="6.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Earth and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 26000; easing: linear; loop: true">
-            <a-entity position="0 0 8" geometry="primitive: sphere; radius: 0.6" material="src:#earth" 
+            <a-entity mixin="earth_p" position="0 0 8"  material="src:#earth" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="8" radius-outer="8.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Mars and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 28000; easing: linear; loop: true">
-            <a-entity position="0 0 10" geometry="primitive: sphere; radius: 0.5" material="src:#mars" 
+            <a-entity mixin="mars_p" position="0 0 10"  material="src:#mars" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="10" radius-outer="10.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Jupiter and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
-            <a-entity position="0 0 13" geometry="primitive: sphere; radius: 2" material="src:#jupiter" 
+            <a-entity mixin="jupiter_p" position="0 0 13"  material="src:#jupiter" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="13" radius-outer="13.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Saturn,Saturn Alpha Ring and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30"
+        <a-entity position="0 0 -30"
             animation="property: rotation; to: 0 360 0; dur: 32000; easing: linear; loop: true">
-            <a-entity position="0 0 17" geometry="primitive: sphere; radius: 2.2" material="src:#saturn" 
+            <a-entity mixin="saturn_p" position="0 0 17"  material="src:#saturn" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
-            <a-entity position="0 0 17"  rotation="45 0 0" geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3" 
+            <a-entity mixin="saturn alpha ring_e" position="0 0 17"  rotation="45 0 0"  
                 material="src:#saturn alpha ring">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="17" radius-outer="17.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Uranus and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 34000; easing: linear; loop: true">
-            <a-entity position="0 0 22" geometry="primitive: sphere; radius: 1.8" material="src:#uranus" 
+            <a-entity mixin="uranus_p" position="0 0 22"  material="src:#uranus" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
         <a-ring radius-inner="22" radius-outer="22.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Neptune and its orbit--> 
-        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
+        <a-entity position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 36000; easing: linear; loop: true">
-            <a-entity position="0 0 26" geometry="primitive: sphere; radius: 1.7" material="src:#neptune" 
+            <a-entity mixin="neptune_p" position="0 0 26"  material="src:#neptune" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
@@ -117,13 +166,11 @@
         <!--plane and sky--> 
         <a-sky color="black"></a-sky>
         <a-entity star-system></a-entity>
+        <a-plane color="#CCC" height="0" width="200"></a-plane>
 
         <!--HTC vive controls-->
-        <a-entity>
-            <a-camera></a-camera>
-            <a-entity sphere-collider="objects: a-entity" super-hands hand-controls="left"></a-entity>
-            <a-entity sphere-collider="objects: a-entity" super-hands hand-controls="right"></a-entity>
-        </a-entity>
+        <a-entity hand-controls="left" mixin="controller"></a-entity>
+        <a-entity hand-controls="right" mixin="controller"></a-entity>
     </a-scene>
 </body>
 
