@@ -35,12 +35,12 @@
         </a-asset-item>
         
         <!--Sun--> 
-        <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
             animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
         </a-entity>
 
         <!--Mercury and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 22000; easing: linear; loop: true">
             <a-entity position="0 0 4" geometry="primitive: sphere; radius: 0.5" material="src:#mercury" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -49,7 +49,7 @@
         <a-ring radius-inner="4" radius-outer="4.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Venus and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 24000; easing: linear; loop: true">
             <a-entity position="0 0 6" geometry="primitive: sphere; radius: 0.6" material="src:#venus" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -58,7 +58,7 @@
         <a-ring radius-inner="6" radius-outer="6.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Earth and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 26000; easing: linear; loop: true">
             <a-entity position="0 0 8" geometry="primitive: sphere; radius: 0.6" material="src:#earth" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -67,7 +67,7 @@
         <a-ring radius-inner="8" radius-outer="8.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Mars and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 28000; easing: linear; loop: true">
             <a-entity position="0 0 10" geometry="primitive: sphere; radius: 0.5" material="src:#mars" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -76,7 +76,7 @@
         <a-ring radius-inner="10" radius-outer="10.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Jupiter and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
             <a-entity position="0 0 13" geometry="primitive: sphere; radius: 2" material="src:#jupiter" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -85,7 +85,7 @@
         <a-ring radius-inner="13" radius-outer="13.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Saturn,Saturn Alpha Ring and its orbit--> 
-        <a-entity position="0 0 -30"
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30"
             animation="property: rotation; to: 0 360 0; dur: 32000; easing: linear; loop: true">
             <a-entity position="0 0 17" geometry="primitive: sphere; radius: 2.2" material="src:#saturn" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -97,7 +97,7 @@
         <a-ring radius-inner="17" radius-outer="17.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Uranus and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 34000; easing: linear; loop: true">
             <a-entity position="0 0 22" geometry="primitive: sphere; radius: 1.8" material="src:#uranus" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -106,7 +106,7 @@
         <a-ring radius-inner="22" radius-outer="22.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
 
         <!--Neptune and its orbit--> 
-        <a-entity position="0 0 -30" 
+        <a-entity hoverable grabbable stretchable draggable dropppable position="0 0 -30" 
             animation="property: rotation; to: 0 360 0; dur: 36000; easing: linear; loop: true">
             <a-entity position="0 0 26" geometry="primitive: sphere; radius: 1.7" material="src:#neptune" 
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
@@ -121,8 +121,8 @@
         <!--HTC vive controls-->
         <a-entity>
             <a-camera></a-camera>
-            <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
-            <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
+            <a-entity sphere-collider="objects: a-entity" super-hands hand-controls="left"></a-entity>
+            <a-entity sphere-collider="objects: a-entity" super-hands hand-controls="right"></a-entity>
         </a-entity>
     </a-scene>
 </body>
