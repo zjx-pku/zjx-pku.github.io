@@ -7,6 +7,7 @@
     <script src="/solar_system_1.0/libs/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
     <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+    <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.7/dist/aframe-controller-cursor-component.min.js"></script> 
 	<title>Solar_System_2.0</title>
 </head>
 
@@ -115,6 +116,10 @@
         <!--plane and sky--> 
         <a-sky color="black"></a-sky>
         <a-entity star-system></a-entity>
+
+        <!--HTC vive controls-->
+        <a-entity vive-controls="hand: left"></a-entity>
+        <a-entity vive-controls="hand: right" controller-cursor></a-entity>
     </a-scene>
 </body>
 
