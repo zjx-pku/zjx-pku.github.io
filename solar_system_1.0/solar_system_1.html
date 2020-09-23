@@ -1,3 +1,8 @@
+<!--
+    solar_system_1是在暑校《虚拟现实内容创作》课程上本人设计的Solar System 1.0全景视频为基础，
+    通过使用A-Frame框架搭建的WebXR应用。由于没有加入交互，因而本应用类似于暑校作品在WebXR中的
+    重现。作者将会在后期版本中加入交互内容，更好地发展它作为一个WebXR应用的优势！   
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,17 +18,17 @@
     <a-scene>
         <!--materials--> 
         <a-assets>
-            <img id="sun" src="/solar_system_1.0/src/space/sun.jpg" />
-            <img id="mercury" src="/solar_system_1.0/src/space/mercury.jpg" />
-            <img id="venus" src="/solar_system_1.0/src/space/venus.jpg" />
-            <img id="earth" src="/solar_system_1.0/src/space/earth.jpg" />
-            <img id="mars" src="/solar_system_1.0/src/space/mars.jpg" />
-            <img id="jupiter" src="/solar_system_1.0/src/space/jupiter.jpg" />
-            <img id="saturn" src="/solar_system_1.0/src/space/saturn.jpg" />
-            <img id="saturn alpha ring" src="/solar_system_1.0/src/space/saturn alpha ring.jpg" />
-            <img id="uranus" src="/solar_system_1.0/src/space/uranus.jpg" />
-            <img id="neptune" src="/solar_system_1.0/src/space/neptune.jpg" />
-            <img id="sky" src="/solar_system_1.0/src/space/sky.jpg" />
+            <img id="sun" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/sun.jpg" />
+            <img id="mercury" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/mercury.jpg" />
+            <img id="venus" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/venus.jpg" />
+            <img id="earth" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/earth.jpg" />
+            <img id="mars" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/mars.jpg" />
+            <img id="jupiter" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/jupiter.jpg" />
+            <img id="saturn" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/saturn.jpg" />
+            <img id="saturn alpha ring" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/saturn%20alpha%20ring.jpg" />
+            <img id="uranus" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/uranus.jpg" />
+            <img id="neptune" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/neptune.jpg" />
+            <img id="sky" src="https://github.com/zjx-pku/zjx-pku.github.io/blob/master/solar_system_1.0/src/space/sky.jpg" />
         </a-assets>
 
         <!--font-->
@@ -43,7 +48,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="4" radius-outer="4.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="4" radius-outer="4.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Venus and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -52,7 +57,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="6" radius-outer="6.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="6" radius-outer="6.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Earth and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -61,7 +66,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="8" radius-outer="8.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="8" radius-outer="8.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Mars and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -70,7 +75,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="10" radius-outer="10.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="10" radius-outer="10.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Jupiter and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -79,7 +84,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="13" radius-outer="13.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="13" radius-outer="13.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Saturn,Saturn Alpha Ring and its orbit--> 
         <a-entity position="0 0 -30"
@@ -91,7 +96,7 @@
                 material="src:#saturn alpha ring">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="17" radius-outer="17.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="17" radius-outer="17.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Uranus and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -100,7 +105,7 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="22" radius-outer="22.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="22" radius-outer="22.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--Neptune and its orbit--> 
         <a-entity position="0 0 -30" 
@@ -109,11 +114,14 @@
                 animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
             </a-entity>
         </a-entity>
-        <a-ring radius-inner="26" radius-outer="26.1" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF"> </a-ring>
+        <a-ring radius-inner="26" radius-outer="26.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
         <!--plane and sky--> 
         <a-plane position="0 -3 0" rotation="-90 0 0" width="1000" height="1000" src="#sky"></a-plane>
         <a-sky src="#sky"></a-sky>
+        
+        <!--Camera-->
+		<a-entity camera look-controls position="0 0.5 -20"></a-entity>
 
     </a-scene>
 </body>
