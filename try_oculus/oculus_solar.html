@@ -1,0 +1,166 @@
+<!--
+    solar_system_1是在暑校《虚拟现实内容创作》课程上本人设计的Solar System 1.0全景视频为基础，
+    通过使用A-Frame框架搭建的WebXR应用。由于没有加入交互，因而本应用类似于暑校作品在WebXR中的
+    重现。作者将会在后期版本中加入交互内容，更好地发展它作为一个WebXR应用的优势！   
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script> 
+    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script> 
+    <script
+        src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+    <title>Solar_System_1.0</title>
+</head>
+
+<script>
+    AFRAME.registerComponent("input-listen", {
+        init: function () {
+            //X-button Pressed
+            this.el.addEventListener("xbuttondown", function (e) {
+                this.emit("teleportstart");
+            });
+
+            //X-button Released
+            this.el.addEventListener("xbuttonup", function (e) {
+                this.emit("teleportend");
+            });
+        }
+    });
+</script>
+
+
+<body>
+    <a-scene physics="debug: false; gravity: 0; restitution: 0.9; " background="color: #AAAAAA">
+        <!--materials--> 
+        <a-assets>
+            <img id="sun" src="/solar_system_1.0/src/space/sun.jpg" />
+            <img id="mercury" src="/solar_system_1.0/src/space/mercury.jpg" />
+            <img id="venus" src="/solar_system_1.0/src/space/venus.jpg" />
+            <img id="earth" src="/solar_system_1.0/src/space/earth.jpg" />
+            <img id="mars" src="/solar_system_1.0/src/space/mars.jpg" />
+            <img id="jupiter" src="/solar_system_1.0/src/space/jupiter.jpg" />
+            <img id="saturn" src="/solar_system_1.0/src/space/saturn.jpg" />
+            <img id="saturn alpha ring" src="/solar_system_1.0/src/space/saturn%20alpha%20ring.jpg" />
+            <img id="uranus" src="/solar_system_1.0/src/space/uranus.jpg" />
+            <img id="neptune" src="/solar_system_1.0/src/space/neptune.jpg" />
+            <img id="sky" src="/solar_system_1.0/src/space/sky.jpg" />
+        </a-assets>
+
+        <!--font-->
+        <a-asset-item id="optimerBoldFont" 
+            src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json">
+        </a-asset-item>
+        
+        <!--Sun--> 
+        <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
+            animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
+        </a-entity>
+
+        <!--Mercury and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 22000; easing: linear; loop: true">
+            <a-entity position="0 0 4" geometry="primitive: sphere; radius: 0.5" material="src:#mercury" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="4" radius-outer="4.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Venus and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 24000; easing: linear; loop: true">
+            <a-entity position="0 0 6" geometry="primitive: sphere; radius: 0.6" material="src:#venus" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="6" radius-outer="6.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Earth and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 26000; easing: linear; loop: true">
+            <a-entity position="0 0 8" geometry="primitive: sphere; radius: 0.6" material="src:#earth" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="8" radius-outer="8.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Mars and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 28000; easing: linear; loop: true">
+            <a-entity position="0 0 10" geometry="primitive: sphere; radius: 0.5" material="src:#mars" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="10" radius-outer="10.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Jupiter and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 30000; easing: linear; loop: true">
+            <a-entity position="0 0 13" geometry="primitive: sphere; radius: 2" material="src:#jupiter" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="13" radius-outer="13.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Saturn,Saturn Alpha Ring and its orbit--> 
+        <a-entity position="0 0 -30"
+            animation="property: rotation; to: 0 360 0; dur: 32000; easing: linear; loop: true">
+            <a-entity position="0 0 17" geometry="primitive: sphere; radius: 2.2" material="src:#saturn" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+            <a-entity position="0 0 17"  rotation="45 0 0" geometry="primitive: ring; radius-inner:2.7 ; radius-outer:3.3" 
+                material="src:#saturn alpha ring">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="17" radius-outer="17.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Uranus and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 34000; easing: linear; loop: true">
+            <a-entity position="0 0 22" geometry="primitive: sphere; radius: 1.8" material="src:#uranus" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="22" radius-outer="22.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--Neptune and its orbit--> 
+        <a-entity position="0 0 -30" 
+            animation="property: rotation; to: 0 360 0; dur: 36000; easing: linear; loop: true">
+            <a-entity position="0 0 26" geometry="primitive: sphere; radius: 1.7" material="src:#neptune" 
+                animation="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: true">
+            </a-entity>
+        </a-entity>
+        <a-ring radius-inner="26" radius-outer="26.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
+
+        <!--plane and sky--> 
+        <a-plane position="0 -3 0" rotation="-90 0 0" width="1000" height="1000" src="#sky"></a-plane>
+        <s-sky color="black"></s-sky>
+        <a-etity star-system></a-etity>
+        
+        <!--Camera-->
+        <a-entity id="cameraRig">
+            <a-entity id="head" camera wasd-controls look-controls position="0 1.6 0">
+            </a-entity>
+            <a-entity id="ctlL"
+                teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents: teleportend"
+                raycaster="objects: .collidable; far:1.2;" laser-controls="hand: left" input-listen>
+                <a-text value="X: Teleport" position="0 0.05 0" rotation="-90 0 0" scale="0.1 0.1 0.1" align="center"
+                    color="#FFFFFF"></a-text>
+            </a-entity>
+            <a-entity id="ctlR" raycaster="objects: .collidable; far:1.2;" laser-controls="hand: right" input-listen>
+                <a-text value="This is your hand!" position="0 0.05 0" rotation="-90 0 0" scale="0.1 0.1 0.1"
+                    align="center" color="#FFFFFF"></a-text>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
+
