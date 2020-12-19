@@ -1,22 +1,13 @@
-<!--
-    solar_system_1是在暑校《虚拟现实内容创作》课程上本人设计的Solar System 1.0全景视频为基础，
-    通过使用A-Frame框架搭建的WebXR应用。由于没有加入交互，因而本应用类似于暑校作品在WebXR中的
-    重现。作者将会在后期版本中加入交互内容，更好地发展它作为一个WebXR应用的优势！   
--->
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <title>Oculus Demo</title>
+    <meta name="description" content="Oculus Quest Demo" />
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script> 
-    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script> 
     <script
         src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
-    <title>Solar_System_1.0</title>
 </head>
 
 <script>
@@ -53,10 +44,6 @@
             <img id="sky" src="/solar_system_1.0/src/space/sky.jpg" />
         </a-assets>
 
-        <!--font-->
-        <a-asset-item id="optimerBoldFont" 
-            src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json">
-        </a-asset-item>
         
         <!--Sun--> 
         <a-entity position="0 0 -30" geometry="primitive: sphere; radius: 3" material="src:#sun"
@@ -138,10 +125,6 @@
         </a-entity>
         <a-ring radius-inner="26" radius-outer="26.05" position="0 0 -30" rotation="-90 0 0" color="#FFFFFF" roughness="0"> </a-ring>
 
-        <!--plane and sky--> 
-        <a-plane position="0 -3 0" rotation="-90 0 0" width="1000" height="1000" src="#sky"></a-plane>
-        <s-sky color="black"></s-sky>
-        <a-etity star-system></a-etity>
         
         <!--Camera-->
         <a-entity id="cameraRig">
